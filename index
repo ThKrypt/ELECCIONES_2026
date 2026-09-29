@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brújula Electoral Ecuador 2026 | Seccionales & CPCCS</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .progress-bar-smooth { transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+    /* Personalización sutil de barra de desplazamiento para la lista de resultados */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-amber-400 selection:text-slate-950 antialiased">
+
+  <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
+  <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-4xl mx-auto px-4 py-3.5 flex items-center justify-between">
+      <div class="flex items-center space-x-2.5">
+        <span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-amber-400/10 border border-amber-400/30 text-amber-400 font-black text-xs">
+          EC
+        </span>
+        <div>
+          <span class="font-extrabold tracking-tight text-sm sm:text-base uppercase text-slate-100 block leading-tight">
+            Brújula Electoral <span class="text-amber-400">2026</span>
+          </span>
+          <span class="text-[10px] text-slate-400 font-medium block">Seccionales: Prefecturas, Alcaldías & CPCCS</span>
+        </div>
+      </div>
+      <div class="flex items-center space-x-2">
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-mono bg-slate-900 border border-slate-700/80 text-amber-300">
+          12 Ejes Territoriales
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="flex-grow flex items-center justify-center p-4 sm:p-6">
+    <div class="w-full max-w-2xl bg-slate-900/90 border border-slate-800 shadow-2xl shadow-black/60 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
+
+      <!-- PANTALLA 1: DATOS TERRITORIALES Y DEMOGRÁFICOS -->
+      <section id="screen-intro" class="space-y-6">
+        <div class="text-center space-y-2">
+          <div class="inline-flex items-center justify-center px-3 py-1 rounded-full text-xs font-semibold bg-amber-400/10 text-amber-300 border border-amber-400/20 mb-1">
+            Elecciones Seccionales Noviembre 2026
+          </div>
+          <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+            Test de Alineación Ideológica
+          </h1>
+          <p class="text-xs sm:text-sm text-slate-400 max-w-lg mx-auto leading-relaxed">
+            Evalúa tu posición política frente a los grandes debates seccionales: autonomía fiscal, armas para policías municipales, servicios concesionados vs. públicos, comercio popular y relación con el Gobierno Nacional.
+          </p>
+        </div>
+
+        <!-- FORMULARIO DE INICIO -->
+        <form id="form-demographics" class="space-y-4 pt-2">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5" for="select-provincia">
+                Provincia <span class="text-amber-400">*</span>
+              </label>
+              <select id="select-provincia" required class="w-full bg-slate-950 border border-slate-700/80 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition">
+                <option value="" disabled selected>Selecciona tu provincia</option>
+                <option value="Azuay">Azuay</option>
+                <option value="Bolívar">Bolívar</option>
+                <option value="Cañar">Cañar</option>
+                <option value="Carchi">Carchi</option>
+                <option value="Chimborazo">Chimborazo</option>
+                <option value="Cotopaxi">Cotopaxi</option>
+                <option value="El Oro">El Oro</option>
+                <option value="Esmeraldas">Esmeraldas</option>
+                <option value="Galápagos">Galápagos</option>
+                <option value="Guayas">Guayas</option>
+                <option value="Imbabura">Imbabura</option>
+                <option value="Loja">Loja</option>
+                <option value="Los Ríos">Los Ríos</option>
+                <option value="Manabí">Manabí</option>
+                <option value="Morona Santiago">Morona Santiago</option>
+                <option value="Napo">Napo</option>
+                <option value="Orellana">Orellana</option>
+                <option value="Pastaza">Pastaza</option>
+                <option value="Pichincha">Pichincha</option>
+                <option value="Santa Elena">Santa Elena</option>
+                <option value="Santo Domingo de los Tsáchilas">Santo Domingo de los Tsáchilas</option>
+                <option value="Sucumbíos">Sucumbíos</option>
+                <option value="Tungurahua">Tungurahua</option>
+                <option value="Zamora Chinchipe">Zamora Chinchipe</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5" for="input-canton">
+                Cantón <span class="text-amber-400">*</span>
+              </label>
+              <input type="text" id="input-canton" required placeholder="Ej. Guayaquil, Quito, Cuenca, Playas, Daule..." class="w-full bg-slate-950 border border-slate-700/80 rounded-xl px-3 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5" for="select-edad">
+                Rango de Edad <span class="text-amber-400">*</span>
+              </label>
+              <select id="select-edad" required class="w-full bg-slate-950 border border-slate-700/80 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition">
+                <option value="" disabled selected>Selecciona tu edad</option>
+                <option value="16-20">16 - 20 años (Voto Facultativo)</option>
+                <option value="21-29">21 - 29 años</option>
+                <option value="30-45">30 - 45 años</option>
+                <option value="46-64">46 - 64 años</option>
+                <option value="65+">65+ años (Voto Facultativo)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5" for="select-simpatia">
+                Simpatía Política Previa <span class="text-amber-400">*</span>
+              </label>
+              <select id="select-simpatia" required class="w-full bg-slate-950 border border-slate-700/80 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition">
+                <option value="" disabled selected>Identificación general</option>
+                <option value="Oficialismo / Derecha">Oficialismo Nacional / Derecha</option>
+                <option value="Revolución Ciudadana / Progresismo">Revolución Ciudadana / Progresismo</option>
+                <option value="Indigenismo / Pachakutik">Movimiento Indígena / Pachakutik</option>
+                <option value="Socialcristianismo / Regionalismo">Socialcristianismo / Liderazgo Local</option>
+                <option value="Centro / Independiente">Centro / Independiente</option>
+                <option value="Prefiero no decir">Prefiero no responder</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="w-full bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-slate-950 font-bold py-3 px-4 rounded-xl transition duration-150 transform hover:-translate-y-0.5 shadow-lg shadow-amber-400/20 text-sm uppercase tracking-wider">
+              Comenzar Evaluación (24 Afirmaciones) &rarr;
+            </button>
+          </div>
+          <p class="text-[11px] text-center text-slate-500">
+            Tus respuestas son 100% anónimas y se agregan con fines de análisis de opinión pública territorial.
+          </p>
+        </form>
+      </section>
+
+      <!-- PANTALLA 2: MOTOR DEL CUESTIONARIO -->
+      <section id="screen-quiz" class="hidden space-y-6">
+        <!-- Barra de Estado y Progreso -->
+        <div class="space-y-2">
+          <div class="flex justify-between items-center text-xs font-semibold text-slate-400 uppercase tracking-wider">
+            <span id="quiz-question-number" class="font-mono">Pregunta 1 de 24</span>
+            <span id="quiz-axis-title" class="text-amber-400 font-semibold truncate max-w-[60%] text-right">Eje</span>
+          </div>
+          <div class="w-full bg-slate-950 border border-slate-800 rounded-full h-2 overflow-hidden">
+            <div id="quiz-progress-bar" class="bg-amber-400 h-2 progress-bar-smooth rounded-full" style="width: 4%;"></div>
+          </div>
+        </div>
+
+        <!-- Enunciado de la Pregunta -->
+        <div class="min-h-[120px] flex items-center justify-center p-3 bg-slate-950/60 border border-slate-800/80 rounded-xl">
+          <p id="quiz-prompt-text" class="text-base sm:text-lg font-medium text-center text-slate-100 leading-snug">
+            Cargando afirmación electoral...
+          </p>
+        </div>
+
+        <!-- Escala Likert de 5 Puntos -->
+        <div class="grid grid-cols-1 gap-2.5">
+          <button onclick="handleAnswer(1.0)" class="w-full py-2.5 px-4 bg-emerald-950/40 hover:bg-emerald-800/60 border border-emerald-700/60 active:scale-[0.99] rounded-xl text-emerald-300 font-semibold text-sm transition">
+            Totalmente de acuerdo
+          </button>
+          <button onclick="handleAnswer(0.5)" class="w-full py-2 px-4 bg-slate-950 hover:bg-slate-800 border border-slate-700/80 active:scale-[0.99] rounded-xl text-slate-200 text-sm transition">
+            De acuerdo
+          </button>
+          <button onclick="handleAnswer(0.0)" class="w-full py-2 px-4 bg-slate-950/50 hover:bg-slate-800/70 border border-slate-800 active:scale-[0.99] rounded-xl text-slate-400 text-sm transition">
+            Neutro / Indiferente
+          </button>
+          <button onclick="handleAnswer(-0.5)" class="w-full py-2 px-4 bg-slate-950 hover:bg-slate-800 border border-slate-700/80 active:scale-[0.99] rounded-xl text-slate-200 text-sm transition">
+            En desacuerdo
+          </button>
+          <button onclick="handleAnswer(-1.0)" class="w-full py-2.5 px-4 bg-rose-950/40 hover:bg-rose-800/60 border border-rose-700/60 active:scale-[0.99] rounded-xl text-rose-300 font-semibold text-sm transition">
+            Totalmente en desacuerdo
+          </button>
+        </div>
+
+        <!-- Controles de Navegación -->
+        <div class="flex justify-between items-center pt-2 border-t border-slate-800">
+          <button id="btn-back" onclick="handleBack()" class="text-xs text-slate-400 hover:text-slate-200 flex items-center space-x-1.5 transition disabled:opacity-30 disabled:pointer-events-none">
+            <span>&larr; Pregunta anterior</span>
+          </button>
+          <span class="text-[11px] text-slate-500 font-medium">Elecciones Noviembre 2026</span>
+        </div>
+      </section>
+
+      <!-- PANTALLA 3: RESULTADOS Y 12 EJES -->
+      <section id="screen-results" class="hidden space-y-6">
+        <div class="text-center space-y-1.5">
+          <span class="text-[11px] uppercase tracking-widest font-bold text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-full border border-amber-400/20">
+            Alineación Seccional 2026
+          </span>
+          <h2 id="result-profile-title" class="text-2xl sm:text-3xl font-extrabold text-white">Calculando afinidad...</h2>
+          <p id="result-profile-desc" class="text-xs sm:text-sm text-slate-400 max-w-lg mx-auto pt-1 leading-relaxed">
+            Alineación resultante según tus respuestas en los 12 ejes sociopolíticos territoriales.
+          </p>
+        </div>
+
+        <!-- Lista Bicolor Dinámica de los 12 Ejes -->
+        <div id="results-axes-container" class="space-y-3 max-h-[380px] overflow-y-auto pr-1">
+          <!-- Renderizado con JavaScript -->
+        </div>
+
+        <div class="space-y-2 pt-2 border-t border-slate-800">
+          <button onclick="copySummary()" class="w-full py-2.5 px-4 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-slate-950 font-bold rounded-xl text-sm transition flex items-center justify-center space-x-2 shadow-lg shadow-amber-400/10">
+            <span id="copy-btn-text">Copiar Resumen de Resultados</span>
+          </button>
+          <button onclick="location.reload()" class="w-full py-2 px-4 text-slate-500 hover:text-slate-300 text-xs font-semibold transition">
+            Volver a realizar el test
+          </button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="py-4 text-center text-xs text-slate-500 border-t border-slate-900 bg-slate-950">
+    Brújula Electoral Ecuador 2026 - RUBEN AROCA JACOME &bull; Prefecturas, Alcaldías y Consejo de Participación Ciudadana y Control Social (CPCCS).
+  </footer>
+
+  <!-- MOTOR LÓGICO EN JAVASCRIPT -->
+  <script>
+    // URL PROVISTA DE GOOGLE APPS SCRIPT PARA REGISTRAR EN GOOGLE SHEETS
+    const GOOGLE_SCRIPT_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxeqycJeSO6_yqjf8moAj4ikvtjhHhV5PYljlEP4I1dbdbAbV57dpJ5OVpjT9vgvh2wog/exec";
+
+    // DEFINICIÓN DE LOS 12 EJES CON POLOS OPUESTOS
+    const AXES = {
+      1: { name: "Autonomía y Finanzas", poleA: "Retención Directa / Autonomía", poleB: "Control Central / Caja Única MEF" },
+      2: { name: "Seguridad Ciudadana", poleA: "Mano Dura / Policías Armados", poleB: "Prevención Comunitaria / DD.HH." },
+      3: { name: "Gestión de Servicios", poleA: "Concesión Privada / APPs", poleB: "Empresas Públicas Municipales" },
+      4: { name: "Espacio Público y Trabajo", poleA: "Control y Desalojo Informal", poleB: "Derecho al Trabajo / EPS" },
+      5: { name: "Movilidad Cantonal", poleA: "Autopistas / Nuevos Peajes", poleB: "Transporte Masivo y Bici" },
+      6: { name: "Ambiente vs. Extractivismo", poleA: "Canteras y Expansión Civil", poleB: "Protección Estricta del Agua" },
+      7: { name: "Fiscalidad Seccional", poleA: "Baja de Tasas / Austeridad", poleB: "Predial Progresivo y Plusvalía" },
+      8: { name: "Cultura y Diversidad", poleA: "Tradición y Valores Religiosos", poleB: "Inclusión y Diversidad LGBTIQ+" },
+      9: { name: "Plurinacionalidad", poleA: "Marco Legal Mestizo Homogéneo", poleB: "Justicia y Comunas Indígenas" },
+      10: { name: "Democracia y Control Social", poleA: "Planificación Tecnocrática", poleB: "Silla Vacía y Veedurías CPCCS" },
+      11: { name: "Suelo y Vivienda", poleA: "Urbanizaciones Cerradas", poleB: "Vivienda Social en Núcleo Urbano" },
+      12: { name: "Relación con Carondelet", poleA: "Alineamiento y Cooperación", poleB: "Confrontación y Reclamo Regional" }
+    };
+
+    // 24 AFIRMACIONES LIKERT ESPECÍFICAS PARA ELECCIONES ECUADOR 2026
+    const QUESTIONS = [
+      // Eje 1: Autonomía y Finanzas
+      { id: 1, axis: 1, direction: 1, prompt: "Los municipios y prefecturas deben exigir la retención inmediata y automática del IVA en sus cuentas locales sin esperar las transferencias del Ministerio de Economía y Finanzas." },
+      { id: 2, axis: 1, direction: -1, prompt: "Para evitar el despilfarro fiscal y duplicidad de obras, los presupuestos de inversión seccional deben estar estrictamente regulados por el Gobierno Central." },
+
+      // Eje 2: Seguridad Ciudadana Cantonal
+      { id: 3, axis: 2, direction: 1, prompt: "Los agentes de control municipal y metropolitano deben portar armas de fuego letales y participar en operativos tácticos de choque contra el crimen organizado." },
+      { id: 4, axis: 2, direction: -1, prompt: "La inversión cantonal en seguridad debe enfocarse en canchas iluminadas, centros comunitarios juveniles y mediación barrial, antes que en patrulleros blindados." },
+
+      // Eje 3: Concesión vs. Empresas Públicas
+      { id: 5, axis: 3, direction: 1, prompt: "Servicios como la distribución de agua potable, alcantarillado y recolección de basura son más eficientes si se concesionan a consorcios privados bajo alianzas público-privadas." },
+      { id: 6, axis: 3, direction: -1, prompt: "El agua y el saneamiento cantonal son derechos humanos esenciales y deben ser gestionados al 100% por empresas públicas municipales sin lucro privado." },
+
+      // Eje 4: Espacio Público y Comercio
+      { id: 7, axis: 4, direction: 1, prompt: "Los municipios deben desalojar con firmeza a los vendedores informales de veredas y semáforos para salvaguardar la tranquilidad y seguridad de los negocios formales." },
+      { id: 8, axis: 4, direction: -1, prompt: "Los gobiernos locales deben regularizar y habilitar puestos fijos en zonas comerciales para los trabajadores de la economía popular antes de decomisar mercaderías." },
+
+      // Eje 5: Movilidad Cantonal
+      { id: 9, axis: 5, direction: 1, prompt: "Las prefecturas y alcaldías deben ampliar pasos a desnivel y autopistas financiadas con nuevos peajes para descongestionar el tráfico vehicular." },
+      { id: 10, axis: 5, direction: -1, prompt: "Las ciudades deben reducir el espacio vial de los automóviles particulares para priorizar carriles exclusivos de transporte público masivo y ciclovías seguras." },
+
+      // Eje 6: Ambiente vs. Extractivismo
+      { id: 11, axis: 6, direction: 1, prompt: "Las autoridades locales deben agilizar permisos para canteras y obras de construcción en riberas y bosques protectores a fin de generar empleo inmediato." },
+      { id: 12, axis: 6, direction: -1, prompt: "Los gobiernos seccionales deben blindar páramos, cuencas de captación de agua y manglares frente a cualquier proyecto minero o de expansión inmobiliaria." },
+
+      // Eje 7: Fiscalidad Seccional
+      { id: 13, axis: 7, direction: 1, prompt: "Para reactivar la economía local, el alcalde debe bajar los impuestos prediales y suprimir tasas como la de habilitación comercial y bomberos." },
+      { id: 14, axis: 7, direction: -1, prompt: "Las empresas y predios de mayor valor deben pagar tasas progresivas e impuestos a la plusvalía más elevados para financiar servicios en barriadas populares." },
+
+      // Eje 8: Cultura y Diversidad
+      { id: 15, axis: 8, direction: 1, prompt: "El presupuesto de cultura de los cabildos debe enfocarse exclusivamente en fiestas patronales religiosas, patrimonio cívico y tradiciones locales consolidadas." },
+      { id: 16, axis: 8, direction: -1, prompt: "Los municipios deben destinar fondos a casas de acogida para mujeres víctimas de violencia y programas activos de inclusión para la comunidad LGBTIQ+." },
+
+      // Eje 9: Plurinacionalidad
+      { id: 17, axis: 9, direction: 1, prompt: "En todo el territorio cantonal y provincial debe prevalecer únicamente la ley ordinaria y la justicia estatal, sin fueros territoriales diferenciados." },
+      { id: 18, axis: 9, direction: -1, prompt: "Las prefecturas y alcaldías deben subordinar sus planes de desarrollo al consentimiento previo y vinculante de los gobiernos comunitarios indígenas y afrodescendientes." },
+
+      // Eje 10: Democracia y Control Social
+      { id: 19, axis: 10, direction: 1, prompt: "La aprobación del presupuesto y las obras cantonales debe quedar en manos de técnicos y planificadores expertos, sin demoras provocadas por asambleas barriales." },
+      { id: 20, axis: 10, direction: -1, prompt: "La participación ciudadana mediante la 'silla vacía' con voto y las veedurías del CPCCS deben ser obligatorias en todas las sesiones de los concejos cantonales." },
+
+      // Eje 11: Suelo y Vivienda
+      { id: 21, axis: 11, direction: 1, prompt: "Las alcaldías deben incentivar la construcción de nuevas urbanizaciones privadas cerradas en las periferias para familias que buscan seguridad y confort." },
+      { id: 22, axis: 11, direction: -1, prompt: "Se debe frenar el crecimiento horizontal de las ciudades y canalizar subsidios hacia vivienda de interés social municipal en el centro urbano consolidado." },
+
+      // Eje 12: Relación con Carondelet
+      { id: 23, axis: 12, direction: 1, prompt: "Prefectos y alcaldes deben coordinar con disciplina y evitar confrontaciones públicas con el Presidente de la República para no perjudicar la llegada de obras." },
+      { id: 24, axis: 12, direction: -1, prompt: "Los liderazgos locales deben movilizar al pueblo y recurrir a medidas de fuerza cuando el Ejecutivo demore asignaciones o imponga medidas centralistas." }
+    ];
+
+    // PERFILES IDEOLÓGICOS LOCALES
+    const PROFILES = [
+      {
+        name: "Municipalismo Progresista y Comunitario",
+        desc: "Defensor irrestricto de las empresas públicas de agua y aseo, presupuestos vecinales vinculantes, defensa de fuentes hídricas y reclamo firme de recursos al poder central.",
+        vector: { 1: 0.8, 2: -0.6, 3: -0.9, 4: -0.8, 5: -0.8, 6: -0.9, 7: -0.8, 8: -0.7, 9: -0.8, 10: -0.8, 11: -0.7, 12: -0.8 }
+      },
+      {
+        name: "Socialcristianismo / Regionalismo Tradicional",
+        desc: "Enfocado en la autonomía tributaria provincial, concesiones privadas de servicios, mano dura policial en el espacio público y defensa de tradiciones e identidad cívica.",
+        vector: { 1: 0.9, 2: 0.9, 3: 0.9, 4: 0.8, 5: 0.7, 6: 0.6, 7: 0.8, 8: 0.8, 9: 0.6, 10: 0.5, 11: 0.8, 12: -0.5 }
+      },
+      {
+        name: "Oficialismo Desarrollista Central",
+        desc: "Prioriza el ordenamiento vial, la disciplina administrativa en sintonía directa con el Presidente de la República, austeridad tributaria y operativos tácticos de seguridad.",
+        vector: { 1: -0.8, 2: 0.8, 3: 0.8, 4: 0.7, 5: 0.6, 6: 0.5, 7: 0.7, 8: 0.4, 9: 0.7, 10: 0.7, 11: 0.6, 12: 0.9 }
+      },
+      {
+        name: "Plurinacionalismo Territorial y Ecologista",
+        desc: "Pone en el centro el agua, los páramos, la soberanía comunitaria de comunas y juntas parroquiales, la fiscalización social y la resistencia frente al modelo extractivo.",
+        vector: { 1: 0.7, 2: -0.8, 3: -0.9, 4: -0.9, 5: -0.9, 6: -1.0, 7: -0.7, 8: -0.8, 9: -1.0, 10: -0.9, 11: -0.9, 12: -0.9 }
+      }
+    ];
+
+    // ESTADO DE LA APLICACIÓN
+    let currentQuestionIdx = 0;
+    let userAnswers = {};
+    let userData = {
+      provincia: "",
+      canton: "",
+      rango_edad: "",
+      simpatia_previa: "",
+      id_respuesta: ""
+    };
+
+    // GENERADOR DE ID ÚNICO
+    function generateUUID() {
+      return 'ec-' + Math.random().toString(36).substring(2, 9) + '-' + Date.now().toString(36);
+    }
+
+    // ENVÍO DE DATOS DEMOGRÁFICOS
+    document.getElementById("form-demographics").addEventListener("submit", function(e) {
+      e.preventDefault();
+      userData.provincia = document.getElementById("select-provincia").value;
+      userData.canton = document.getElementById("input-canton").value.trim();
+      userData.rango_edad = document.getElementById("select-edad").value;
+      userData.simpatia_previa = document.getElementById("select-simpatia").value;
+      userData.id_respuesta = generateUUID();
+
+      document.getElementById("screen-intro").classList.add("hidden");
+      document.getElementById("screen-quiz").classList.remove("hidden");
+      renderQuestion();
+    });
+
+    // RENDERIZAR PREGUNTA ACTUAL
+    function renderQuestion() {
+      const q = QUESTIONS[currentQuestionIdx];
+      const total = QUESTIONS.length;
+      const progressPercent = ((currentQuestionIdx + 1) / total) * 100;
+
+      document.getElementById("quiz-question-number").innerText = `Pregunta ${currentQuestionIdx + 1} de ${total}`;
+      document.getElementById("quiz-axis-title").innerText = AXES[q.axis].name;
+      document.getElementById("quiz-progress-bar").style.width = `${progressPercent}%`;
+      document.getElementById("quiz-prompt-text").innerText = `"${q.prompt}"`;
+
+      document.getElementById("btn-back").disabled = (currentQuestionIdx === 0);
+    }
+
+    // REGISTRAR RESPUESTA Y AVANZAR
+    function handleAnswer(score) {
+      const q = QUESTIONS[currentQuestionIdx];
+      userAnswers[q.id] = score * q.direction;
+
+      if (currentQuestionIdx < QUESTIONS.length - 1) {
+        currentQuestionIdx++;
+        renderQuestion();
+      } else {
+        finishQuiz();
+      }
+    }
+
+    // RETROCEDER PREGUNTA
+    function handleBack() {
+      if (currentQuestionIdx > 0) {
+        currentQuestionIdx--;
+        renderQuestion();
+      }
+    }
+
+    // CÁLCULO DE RESULTADOS
+    function finishQuiz() {
+      document.getElementById("screen-quiz").classList.add("hidden");
+      document.getElementById("screen-results").classList.remove("hidden");
+
+      const axisScores = {};
+      const axisPercentages = {};
+
+      // Normalizar cada eje a escala 0% a 100%
+      for (let axisId = 1; axisId <= 12; axisId++) {
+        const qAxis = QUESTIONS.filter(q => q.axis === axisId);
+        const sum = qAxis.reduce((acc, q) => acc + (userAnswers[q.id] || 0), 0);
+        axisScores[axisId] = sum; // Rango [-2, +2]
+        axisPercentages[axisId] = Math.round(((sum + 2) / 4) * 100);
+      }
+
+      // Cálculo del perfil más afín por menor distancia euclidiana
+      let bestProfile = PROFILES[0];
+      let minDistance = Infinity;
+
+      PROFILES.forEach(profile => {
+        let distSq = 0;
+        for (let axisId = 1; axisId <= 12; axisId++) {
+          const userVal = axisScores[axisId] / 2; // Rango [-1, 1]
+          const targetVal = profile.vector[axisId] || 0;
+          distSq += Math.pow(userVal - targetVal, 2);
+        }
+        const dist = Math.sqrt(distSq);
+        if (dist < minDistance) {
+          minDistance = dist;
+          bestProfile = profile;
+        }
+      });
+
+      // Actualizar cabecera de resultados
+      document.getElementById("result-profile-title").innerText = bestProfile.name;
+      document.getElementById("result-profile-desc").innerText = bestProfile.desc;
+
+      // Renderizar barras visuales de los 12 ejes
+      const container = document.getElementById("results-axes-container");
+      container.innerHTML = "";
+
+      for (let axisId = 1; axisId <= 12; axisId++) {
+        const pA = axisPercentages[axisId];
+        const pB = 100 - pA;
+        const axisMeta = AXES[axisId];
+
+        const card = document.createElement("div");
+        card.className = "bg-slate-950/70 border border-slate-800 rounded-xl p-3 text-xs space-y-1.5";
+        card.innerHTML = `
+          <div class="flex justify-between items-center font-semibold text-slate-300">
+            <span>${axisId}. ${axisMeta.name}</span>
+            <span class="text-amber-400 font-mono text-[11px]">${pA}% vs ${pB}%</span>
+          </div>
+          <div class="w-full bg-slate-800 rounded-full h-2.5 flex overflow-hidden">
+            <div class="bg-amber-400 h-2.5 transition-all duration-500" style="width: ${pA}%" title="${axisMeta.poleA}: ${pA}%"></div>
+            <div class="bg-blue-600 h-2.5 transition-all duration-500" style="width: ${pB}%" title="${axisMeta.poleB}: ${pB}%"></div>
+          </div>
+          <div class="flex justify-between text-[10px] text-slate-400 leading-tight">
+            <span class="truncate max-w-[48%]" title="${axisMeta.poleA}">${axisMeta.poleA}</span>
+            <span class="truncate max-w-[48%] text-right" title="${axisMeta.poleB}">${axisMeta.poleB}</span>
+          </div>
+        `;
+        container.appendChild(card);
+      }
+
+      // Enviar resultados al webhook de Google Sheets en segundo plano
+      submitToGoogleSheets(axisPercentages, bestProfile.name);
+    }
+
+    // TRANSMISIÓN ASÍNCRONA A GOOGLE SHEETS
+    async function submitToGoogleSheets(percentages, profileName) {
+      const payload = {
+        id_respuesta: userData.id_respuesta,
+        provincia: userData.provincia,
+        canton: userData.canton,
+        rango_edad: userData.rango_edad,
+        simpatia_previa: userData.simpatia_previa,
+        eje_1: percentages[1],
+        eje_2: percentages[2],
+        eje_3: percentages[3],
+        eje_4: percentages[4],
+        eje_5: percentages[5],
+        eje_6: percentages[6],
+        eje_7: percentages[7],
+        eje_8: percentages[8],
+        eje_9: percentages[9],
+        eje_10: percentages[10],
+        eje_11: percentages[11],
+        eje_12: percentages[12],
+        perfil_ideologico: profileName,
+        raw_scores: userAnswers
+      };
+
+      try {
+        await fetch(GOOGLE_SCRIPT_WEBAPP_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        console.log("Datos enviados satisfactoriamente a Google Sheets.");
+      } catch (err) {
+        console.warn("Fallo de comunicación en segundo plano con el Webhook:", err);
+      }
+    }
+
+    // COPIAR RESUMEN AL PORTAPAPELES
+    function copySummary() {
+      const title = document.getElementById("result-profile-title").innerText;
+      const text = `🗳️ Mi perfil para las Elecciones Seccionales Ecuador 2026 es: "${title}". Realiza el test de los 12 ejes seccionales aquí.`;
+      
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        const btnText = document.getElementById("copy-btn-text");
+        btnText.innerText = "¡Copiado al portapapeles!";
+        setTimeout(() => { btnText.innerText = "Copiar Resumen de Resultados"; }, 2500);
+      } catch (err) {
+        console.error("Error al copiar texto:", err);
+      }
+      document.body.removeChild(textArea);
+    }
+  </script>
+</body>
+</html>
